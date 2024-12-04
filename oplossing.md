@@ -1,3 +1,5 @@
+a)
+
 ### test.jenkinsfile
 
 ### Cleanup Stage
@@ -25,6 +27,20 @@ Dit beeld toont de console-uitvoer van de jenkinsfile
 
 ![ConsoleOutput](images/ConsoleOutput.png)
 
-a)
+
+### Docker build, push en deploy
+
+Om docker te kunnen pushen ga ik credentials username met password toevoegen in jenkins:
+
+![Credentials](images/docker-credential.png)
+
+Docker image is succesvol naar DockerHub gepusht 
+
+![DockerHub](images/dockerhub.png)
+
+Console output:
+
+![ConsoelOutput](images/console_deploy.png)
+
 
 b)
