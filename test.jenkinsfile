@@ -1,17 +1,34 @@
 pipeline {
     agent any
-  
+    tools {
+        nodejs 'testenvnode' 
+    }
     stages {
         stage ('cleanup'){
-            steps{
-                // TODO
-            }
+            steps {
+                echo 'Cleaning up workspace...'
+                deleteDir() // Verwijdert alle bestanden in de huidige workspace
+            }   
         }
+
         stage('fetch app code') {
             steps {
                 // Get some code from a GitHub repository
                 git branch: 'main', url: 'https://github.com/PXL-2TIN-DevOps-Resources/calculator-app-finished.git'
             }
         }
+
+	stage('Install Dependencies') {
+            steps {
+                echo 'Installing Node.js dependencies...'
+                sh 'npm install'
+            }
+        }
     }
+
+    post {
+        always {
+            echo 'Pipeline execution complete.'
+          }
+       }
 }
