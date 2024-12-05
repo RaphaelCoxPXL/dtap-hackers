@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('dtap production') {
             steps {
-                echo "good luck..."
+                echo "assalamu alaikum bitches"
             }
         }
     }
