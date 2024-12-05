@@ -26,7 +26,7 @@ pipeline {
                     ssh $REMOTE_SERVER "
                         docker stop calculator-app || true &&
                         docker rm calculator-app || true &&
-                        docker run -d -p 80:80 --name calculator-app $DOCKER_IMAGE
+                        docker run -d -p 80:3000 --name calculator-app $DOCKER_IMAGE
                     "
                     """
                 }
